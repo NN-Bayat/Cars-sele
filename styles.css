@@ -17,6 +17,18 @@
     --bg-color: #fff;
 }
 
+/* ---------- */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background: linear-gradient(blue, var(--text-color), var(--main-color));
+}
+
+/* ---------- */
 section {
     padding: 4rem 0 2rem;
 }
@@ -41,6 +53,16 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
+}
+
+header.shadow {
+    background: var(--bg-color);
+    box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
+    transition: 0.7s ease;
+}
+
+header.shadow #search-icon {
+    color: var(--main-color);
 }
 
 .nav {
@@ -88,7 +110,7 @@ header {
 #search-icon {
     font-size: 24px;
     cursor: pointer;
-    /* color: var(--bg-color); */
+    color: var(--bg-color);
 }
 
 .search-box {
@@ -130,7 +152,7 @@ header {
 }
 
 .home-text {
-    padding-left: 130px;
+    padding-left: 290px;
 }
 
 .home-text h1 {
@@ -152,11 +174,12 @@ header {
     background: var(--main-color);
     color: var(--bg-color);
     font-weight: 400;
+    border-radius: 5px;
 }
 
 .btn:hover {
-    background: #fd052f;
-    border-radius: 5px;
+    background: blue;
+    transition: 0.5s;
 }
 
 .heading {
@@ -193,6 +216,7 @@ header {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .cars-container .box img:hover {
@@ -247,17 +271,314 @@ header {
     margin: 0.5rem 0 1.4rem;
 }
 
+.parts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
+.parts-container .box {
+    flex: 1 1 17rem;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #f6f6f6;
+    border-radius: 0.5rem;
+}
 
+.parts-container .box img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-top: 1rem;
+}
 
+.parts-container .box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
+.parts-container .box span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
 
+.parts-container .box .bx {
+    color: var(--main-color);
+    margin: 0.8rem 0;
+}
 
+.parts-container .box .btn {
+    width: 120px;
+}
 
+.parts-container .box .details {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: 0.2s;
+}
 
+.parts-container .box .details:hover {
+    transform: scale(1.15);
+    margin-right: 0.3rem;
+    color: var(--main-color);
+    text-decoration: underline;
+}
 
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
+.blog-container .box {
+    flex: 1 1 13rem;
+    padding: 20px;
+}
 
+.blog-container .box:hover {
+    background: #f6f6f6;
+}
 
+.blog-container .box span {
+    font-size: 0.8rem;
+    color: var(--main-color);
+    font-weight: 500;
+}
 
+.blog-container .box h3 {
+    font-size: 1.2rem;
+}
 
+.blog-container .box p {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.blog-container .box .blog-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: var(--text-color);
+}
+
+.blog-container .box .blog-btn .bx {
+    font-size: 25px;
+}
+
+.blog-container .box .blog-btn:hover {
+    color: var(--main-color);
+    column-gap: 1.4rem;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.footer {
+    background: var(--text-color);
+    color: #f6f6f6;
+    border-top: 2px solid var(--main-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-container .logo {
+    color: var(--bg-color);
+    margin-bottom: 1rem;
+}
+
+.footer-container .logo:hover {
+    transform: none;
+    transition: 0.3s;
+}
+
+.footer-container .footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social a {
+    font-size: 25px;
+    color: var(--bg-color);
+    margin-right: 1rem;
+}
+
+.social i:hover {
+    color: var(--main-color);
+    transition: 0.3s;
+    transform: scale(1.3);
+}
+
+.footer-box h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 0.8px;
+}
+
+.footer-box a,
+.footer-box p {
+    color: #818181;
+    margin-bottom: 10px;
+}
+
+.footer-box a:hover {
+    color: var(--main-color);
+}
+
+.copyright {
+    padding: 15px;
+    text-align: center;
+    background: var(--text-color);
+    color: #818181;
+}
+
+/* -------------RESPONSIVE-STYLES------------- */
+@media (max-width:1080px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .home-text {
+        padding-left: 3.5rem;
+    }
+}
+
+@media (max-width:991px) {
+    .nav {
+        padding: 15px 20px;
+    }
+
+    section {
+        padding: 3rem 0 1rem;
+    }
+
+    .home-text {
+        padding-left: 2rem;
+    }
+
+    .home-text h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width:920px) {
+    #search-icon {
+        color: var(--text-color);
+    }
+}
+
+@media (max-width:768px) {
+    .search-box input {
+        padding: 10px;
+    }
+
+    .nav {
+        padding: 10px 0;
+    }
+
+    #menu-icon {
+        display: initial;
+    }
+
+    .navbar {
+        background: var(--bg-color);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        text-align: center;
+        box-shadow: 4px 4px 20px rgb(15 54 55 / 20%);
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 15px;
+    }
+
+    .navbar a:hover,
+    .navbar .active {
+        border-bottom: none;
+        background: var(--main-color);
+        color: var(--bg-color);
+    }
+
+    .navbar.active {
+        clip-path: circle(144% at 0% 0%);
+    }
+
+    .blog-container .box {
+        padding: 4px;
+    }
+}
+
+@media (max-width:720px) {
+    .heading span {
+        font-size: 0.9rem;
+    }
+
+    .heading h2 {
+        font-size: 1.4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width:600px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:360px) {
+    .search-box input {
+        padding: 11px;
+    }
+
+    .home {
+        min-height: 500px;
+    }
+
+    .home-text h1 {
+        font-size: 2rem;
+    }
+
+    .home-text p br {
+        display: contents;
+    }
+}
